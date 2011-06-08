@@ -1,0 +1,12 @@
+if [ -f ~/PCMTOGGLE ]; then
+   for i in `seq 0 255 | tac`; do
+      amixer -c 0 sset PCM $i
+   done
+   rm ~/PCMTOGGLE
+else
+   for i in `seq 0 255`; do
+      amixer -c 0 sset PCM $i
+   done
+   touch ~/PCMTOGGLE
+fi
+     
